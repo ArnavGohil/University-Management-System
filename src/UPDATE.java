@@ -222,7 +222,7 @@ public class UPDATE extends javax.swing.JFrame {
                 query = "UPDATE MARKS SET MARKS = " + val + " WHERE STUD_ID = " + uniq + " AND SUBJECT = "+ para + " ;" ;
                 break;
             case 3:
-                query = "UPDATE FACULTY SET NAME = " + val + " WHERE FAC_ID = " + uniq +" ;" ;
+                query = "UPDATE FACULTY SET NAME = \"" + val + "\" WHERE FAC_ID = " + uniq +" ;" ;
                 break;
             case 4:
                 query = "UPDATE FACULTY SET PHONE_NO = " + val + " WHERE FAC_ID = " + uniq +" ;" ;
