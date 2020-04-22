@@ -83,11 +83,11 @@ public class SEARCH extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(b1)
-                .addGap(45, 45, 45)
+                .addGap(228, 228, 228)
                 .addComponent(b2)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(b3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,11 +112,11 @@ public class SEARCH extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ADMN", "NAME", "MARKS", "SUBJECT"
+                "1", "2", "3", "4", "5"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -130,25 +130,24 @@ public class SEARCH extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(193, Short.MAX_VALUE)
+                .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(336, 336, 336)
                 .addComponent(jLabel1)
-                .addGap(145, 145, 145))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,6 +176,13 @@ public class SEARCH extends javax.swing.JFrame {
         l1.setVisible(true);
         l1.setText("Enter Admn No.");
         flag = 0 ;
+        
+        jTable1.getColumnModel().getColumn(0).setHeaderValue("ADMN NO");
+        jTable1.getColumnModel().getColumn(1).setHeaderValue("NAME");
+        jTable1.getColumnModel().getColumn(2).setHeaderValue("PHONE NO");
+        jTable1.getColumnModel().getColumn(3).setHeaderValue("ADDRESS");
+        jTable1.getColumnModel().getColumn(4).setHeaderValue("DOB");
+        jTable1.getTableHeader().repaint();        
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
@@ -185,6 +191,13 @@ public class SEARCH extends javax.swing.JFrame {
         l1.setVisible(true);
         l1.setText("Enter Faculty Id");
         flag = 1 ;
+        
+        jTable1.getColumnModel().getColumn(0).setHeaderValue("FACULTY ID");
+        jTable1.getColumnModel().getColumn(1).setHeaderValue("NAME");
+        jTable1.getColumnModel().getColumn(2).setHeaderValue("PHONE NO");
+        jTable1.getColumnModel().getColumn(3).setHeaderValue("ADDRESS");
+        jTable1.getColumnModel().getColumn(4).setHeaderValue("DEPARTMENT");
+        jTable1.getTableHeader().repaint();        
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
@@ -193,6 +206,13 @@ public class SEARCH extends javax.swing.JFrame {
         l1.setVisible(true);
         l1.setText("Enter Subject Code (OR) Student Id");
         flag = 2 ;
+        
+        jTable1.getColumnModel().getColumn(0).setHeaderValue("STUDENT ID");
+        jTable1.getColumnModel().getColumn(1).setHeaderValue("STUDENT NAME");
+        jTable1.getColumnModel().getColumn(2).setHeaderValue("SUBJECT NAME");
+        jTable1.getColumnModel().getColumn(3).setHeaderValue("MARKS");
+        jTable1.getColumnModel().getColumn(4).setHeaderValue("FACULTY");
+        jTable1.getTableHeader().repaint();        
     }//GEN-LAST:event_b3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -207,41 +227,44 @@ public class SEARCH extends javax.swing.JFrame {
             {
                 str = t1.getText();
                 if(str.equals(""))
-                    query = "SELECT * FROM STUDENTS;";
+                    query = "SELECT ADMN_NO,NAME,PHONE_NO,ADDRESS,DOB FROM STUDENTS;";
                 else
-                    query = "SELECT * FROM STUDENTS WHERE ADMN_NO = " + str + ";";
-                
+                    query = "SELECT ADMN_NO,NAME,PHONE_NO,ADDRESS,DOB FROM STUDENTS WHERE ADMN_NO = " + str + ";";
+                               
             }
             else if(flag == 1)
             {
                 str = t1.getText();
                 if(str.equals(""))
-                    query = "SELECT * FROM FACULTY;";
+                    query = "SELECT F.* , D.DEPT_NAME FROM FACULTY F , DEPT D WHERE F.DEPARTMENT = D.DEPT_CODE;";
                 else
-                    query = "SELECT * FROM FACULTY WHERE FAC_ID = " + str + ";";
+                    query = "SELECT F.* , D.DEPT_NAME FROM FACULTY F , DEPT D WHERE F.DEPARTMENT = D.DEPT_CODE AND FAC_ID = " + str + ";";
                 
             }
             else if(flag == 2)
             {
                 str = t1.getText();                
                 if(str.equals(""))
-                    query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
-                            + " FROM STUDENTS S , MARKS M , SUBJECT SB "
+                    query = "SELECT S.ADMN_NO , S.NAME , SB.SUB_NAME , M.MARKS , F.NAME "
+                            + " FROM STUDENTS S , MARKS M , SUBJECT SB , FACULTY F "
                             + " WHERE S.ADMN_NO = M.STUD_ID"
-                            + " AND M.SUBJECT = SB.SUB_CODE ;";
+                            + " AND M.SUBJECT = SB.SUB_CODE "
+                            + " AND F.FAC_ID = SB.FACULTY ;";
                 else {
                     char i = str.charAt(0);
                     if (i == 'B') {
-                        query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
-                                + " FROM STUDENTS S , MARKS M , SUBJECT SB "
+                        query = "SELECT S.ADMN_NO , S.NAME , SB.SUB_NAME , M.MARKS , F.NAME "
+                                + " FROM STUDENTS S , MARKS M , SUBJECT SB , FACULTY F "
                                 + " WHERE S.ADMN_NO = M.STUD_ID"
                                 + " AND M.SUBJECT = SB.SUB_CODE"
+                                + " AND F.FAC_ID = SB.FACULTY "
                                 + " AND S.ADMN_NO = " + str.substring(1) + ";";
                     } else {
-                        query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
-                                + " FROM STUDENTS S , MARKS M , SUBJECT SB "
+                        query = "SELECT S.ADMN_NO , S.NAME , SB.SUB_NAME , M.MARKS , F.NAME "
+                                + " FROM STUDENTS S , MARKS M , SUBJECT SB , FACULTY F "
                                 + " WHERE S.ADMN_NO = M.STUD_ID"
                                 + " AND M.SUBJECT = SB.SUB_CODE"
+                                + " AND F.FAC_ID = SB.FACULTY "
                                 + " AND SB.SUB_CODE = " + str.substring(1) + ";";
                     }
                 }
@@ -259,8 +282,9 @@ public class SEARCH extends javax.swing.JFrame {
                 String NAME = rs.getString(2);
                 String MARKS = rs.getString(3);
                 String SUB = rs.getString(4);
+                String DEP = rs.getString(5);
                 
-                model.addRow(new Object[] {ADMN,NAME,MARKS,SUB});
+                model.addRow(new Object[] {ADMN,NAME,MARKS,SUB,DEP});
               
             }
             
