@@ -223,23 +223,27 @@ public class SEARCH extends javax.swing.JFrame {
             }
             else if(flag == 2)
             {
-                str = t1.getText();
-                char i = str.charAt(0);
-                if(i == 'B')
-                {
+                str = t1.getText();                
+                if(str.equals(""))
                     query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
                             + " FROM STUDENTS S , MARKS M , SUBJECT SB "
                             + " WHERE S.ADMN_NO = M.STUD_ID"
-                            + " AND M.SUBJECT = SB.SUB_CODE"
-                            + " AND S.ADMN_NO = "+str.substring(1)+";";
-                }
-                else
-                {
-                    query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
-                            + " FROM STUDENTS S , MARKS M , SUBJECT SB "
-                            + " WHERE S.ADMN_NO = M.STUD_ID"
-                            + " AND M.SUBJECT = SB.SUB_CODE"
-                            + " AND SB.SUB_CODE = "+str.substring(1)+";";
+                            + " AND M.SUBJECT = SB.SUB_CODE ;";
+                else {
+                    char i = str.charAt(0);
+                    if (i == 'B') {
+                        query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
+                                + " FROM STUDENTS S , MARKS M , SUBJECT SB "
+                                + " WHERE S.ADMN_NO = M.STUD_ID"
+                                + " AND M.SUBJECT = SB.SUB_CODE"
+                                + " AND S.ADMN_NO = " + str.substring(1) + ";";
+                    } else {
+                        query = "SELECT S.ADMN_NO , S.NAME , M.MARKS , SB.SUB_NAME"
+                                + " FROM STUDENTS S , MARKS M , SUBJECT SB "
+                                + " WHERE S.ADMN_NO = M.STUD_ID"
+                                + " AND M.SUBJECT = SB.SUB_CODE"
+                                + " AND SB.SUB_CODE = " + str.substring(1) + ";";
+                    }
                 }
             }
             
