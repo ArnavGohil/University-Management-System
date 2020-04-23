@@ -42,7 +42,6 @@ public class SEARCH extends javax.swing.JFrame {
         b1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,14 +88,6 @@ public class SEARCH extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 760, 276));
 
-        jButton5.setText("←");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 40, -1));
-
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -104,6 +95,14 @@ public class SEARCH extends javax.swing.JFrame {
         jLabel1.setText("SEARCH");
 
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
         stBut.setBackground(new java.awt.Color(153, 204, 255));
         stBut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -316,12 +315,6 @@ public class SEARCH extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_b1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new Home().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void stButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stButMouseClicked
         // TODO add your handling code here:
         t1.setVisible(true);
@@ -379,6 +372,12 @@ public class SEARCH extends javax.swing.JFrame {
         jTable1.getTableHeader().repaint();        
     }//GEN-LAST:event_maButMouseClicked
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:        
+        this.setVisible(false);
+        new Home().setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
     void setColor(JPanel panel)
     {
         panel.setBackground(new Color(238,238,238));
@@ -399,7 +398,7 @@ public class SEARCH extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Mac OS X".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -428,7 +427,6 @@ public class SEARCH extends javax.swing.JFrame {
     private javax.swing.JButton b1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel faBut;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
