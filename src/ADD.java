@@ -581,7 +581,7 @@ public class ADD extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-         String query = "INSERT INTO SUBJECT(sub_name , dept , semester, faculty) VALUES(" ;
+        String query = "INSERT INTO SUBJECT(sub_name , dept , semester, faculty) VALUES(" ;
         query += "\"" + bt1.getText() + "\"," ; 
         query += "\"" + bt2.getText() + "\"," ; 
         query +=  bt3.getText() + "," ; 

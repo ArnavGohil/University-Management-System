@@ -200,11 +200,7 @@ int flag = 0 ;
             conn.close();
            
         } catch (Exception ex) {
-            if("Illegal operation on empty result set.".equals(ex.getMessage()))
-            {
                 JOptionPane.showMessageDialog(null, "INVALID!");
-            }
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bbActionPerformed
 

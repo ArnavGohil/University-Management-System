@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.sql.* ;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -292,6 +293,11 @@ public class SEARCH extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             
             ResultSet rs = stmt.executeQuery(query);
+            
+            if (!rs.next()) 
+                JOptionPane.showMessageDialog(null, "VALUE NOT PRESENT!");     
+            else
+                rs.beforeFirst();
             
             while(rs.next())
             {
