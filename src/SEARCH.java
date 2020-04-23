@@ -96,6 +96,7 @@ public class SEARCH extends javax.swing.JFrame {
         jLabel1.setText("SEARCH");
 
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel2.setToolTipText("Home");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -317,6 +318,7 @@ public class SEARCH extends javax.swing.JFrame {
             
                 
         } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "INVALID!");
             Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }//GEN-LAST:event_b1ActionPerformed

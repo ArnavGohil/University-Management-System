@@ -1,6 +1,7 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -335,6 +336,7 @@ public class ADD extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
         jLabel18.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel18.setToolTipText("Home");
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel18MouseClicked(evt);
@@ -525,12 +527,19 @@ public class ADD extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
 
             stmt.executeUpdate(query);
+            
+            String qr = "SELECT ADMN_NO FROM STUDENTS WHERE NAME = \"" + st1.getText() + "\";";
+            ResultSet rs = stmt.executeQuery(qr);            
+            rs.next();
+            qr = rs.getString(1).toUpperCase();
+            
             stmt.close();
             conn.close();
-            JOptionPane.showMessageDialog(null, "ADDED!");
+            JOptionPane.showMessageDialog(null, "ADDED!\nAdmission No. - " + qr );
 
         } catch (Exception ex) {
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "INVALID ENTRY!");
+            Logger.getLogger(ADD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -547,12 +556,19 @@ public class ADD extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
 
             stmt.executeUpdate(query);
+            
+            String qr = "SELECT FAC_ID FROM FACULTY WHERE NAME = \"" + ft1.getText() + "\";";
+            ResultSet rs = stmt.executeQuery(qr);            
+            rs.next();
+            qr = rs.getString(1).toUpperCase();
+            
             stmt.close();
             conn.close();
-            JOptionPane.showMessageDialog(null, "ADDED!");
+            JOptionPane.showMessageDialog(null, "ADDED!\nFaculty ID. - " + qr);
 
         } catch (Exception ex) {
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "INVALID ENTRY!");
+            Logger.getLogger(ADD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -574,7 +590,8 @@ public class ADD extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "ADDED!");
 
         } catch (Exception ex) {
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "INVALID ENTRY!");
+            Logger.getLogger(ADD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -597,7 +614,9 @@ public class ADD extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "ADDED!");
 
         } catch (Exception ex) {
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
+            
+            JOptionPane.showMessageDialog(null, "INVALID ENTRY!");
+            Logger.getLogger(ADD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_jButton4ActionPerformed

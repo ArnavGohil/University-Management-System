@@ -98,6 +98,7 @@ public class UPDATE extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel2.setToolTipText("Home");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -225,25 +226,32 @@ public class UPDATE extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = jComboBox1.getSelectedIndex();
         String uniq = t1.getText(), para = t2.getText() , val = t3.getText(), query = "";
+        String qr = "" ;
         
         switch (i) {
             case 0:
                 query = "UPDATE STUDENTS SET NAME = \"" + val + "\" WHERE ADMN_NO = " + uniq +" ;" ;
+                qr = "SELECT NAME FROM STUDENTS WHERE ADMN_NO = " + uniq +" ;" ;
                 break;
             case 1:
                 query = "UPDATE STUDENTS SET PHONE_NO = " + val + " WHERE ADMN_NO = " + uniq +" ;" ;
+                qr = "SELECT PHONE_NO FROM STUDENTS WHERE ADMN_NO = " + uniq +" ;" ;
                 break;
             case 2:
                 query = "UPDATE MARKS SET MARKS = " + val + " WHERE STUD_ID = " + uniq + " AND SUBJECT = "+ para + " ;" ;
+                qr = "SELECT MARKS FROM MARKS WHERE STUD_ID = " + uniq + " AND SUBJECT = "+ para + " ;" ;
                 break;
             case 3:
                 query = "UPDATE FACULTY SET NAME = \"" + val + "\" WHERE FAC_ID = " + uniq +" ;" ;
+                qr = "SELECT NAME FROM FACULTY WHERE FAC_ID = " + uniq +" ;" ;
                 break;
             case 4:
                 query = "UPDATE FACULTY SET PHONE_NO = " + val + " WHERE FAC_ID = " + uniq +" ;" ;
+                qr = "SELECT PHONE_NO FROM FACULTY WHERE FAC_ID = " + uniq +" ;" ;
                 break;
             case 5:
                 query = "UPDATE SUBJECT SET FACULTY = " + val + " WHERE SUB_CODE = " + uniq +" ;" ;
+                qr = "SELECT NAME FROM FACULTY WHERE FAC_ID = " + uniq +" OR FAC_ID = " + val +" ;" ;
                 break;
         }
         
@@ -251,14 +259,29 @@ public class UPDATE extends javax.swing.JFrame {
          try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/university", "root", "agat9191");
             Statement stmt = conn.createStatement();
-
-            stmt.executeUpdate(query);
+            
+            ResultSet rs = stmt.executeQuery(qr);            
+            rs.next();
+            qr = rs.getString(1).toUpperCase();
+            if(i == 5)
+            {
+                 rs.next();
+                 val = rs.getString(1).toUpperCase();
+            }
+            int rep =  JOptionPane.showConfirmDialog(null, "Are You sure you want to update " + qr + " to " + val + " ?", "UPDATE ?",JOptionPane.YES_NO_OPTION);
+            if(rep == JOptionPane.YES_OPTION)
+            {
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "UPDATED!");
+            }
+            
             stmt.close();
             conn.close();
-            JOptionPane.showMessageDialog(null, "UPDATED!");
+            
 
         } catch (Exception ex) {
-            Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "INVALID!");
+            Logger.getLogger(UPDATE.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_b1ActionPerformed

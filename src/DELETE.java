@@ -70,6 +70,7 @@ int flag = 0 ;
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel1.setToolTipText("Home");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -201,6 +202,7 @@ int flag = 0 ;
            
         } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "INVALID!");
+                Logger.getLogger(DELETE.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bbActionPerformed
 
