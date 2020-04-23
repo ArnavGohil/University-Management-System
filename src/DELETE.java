@@ -8,10 +8,12 @@
  *
  * @author arnavgohil
  */
+import java.awt.Color;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 public class DELETE extends javax.swing.JFrame {
 int flag = 0 ;
     /**
@@ -22,6 +24,8 @@ int flag = 0 ;
         t1.setVisible(false);
         l1.setVisible(false);
         bb.setVisible(false);
+        s1.setVisible(false);
+        s2.setVisible(false);
     }
 
     /**
@@ -34,58 +38,25 @@ int flag = 0 ;
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        b1 = new javax.swing.JRadioButton();
-        b2 = new javax.swing.JRadioButton();
         l1 = new javax.swing.JLabel();
         t1 = new javax.swing.JTextField();
         bb = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        s1 = new javax.swing.JSeparator();
+        s2 = new javax.swing.JSeparator();
+        studLL = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        facLL = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel1.setText("DELETE");
-
-        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
-
-        buttonGroup1.add(b1);
-        b1.setText("STUDENT");
-        b1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(b2);
-        b2.setText("FACULTY");
-        b2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(b1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(b2)
-                .addGap(33, 33, 33))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b1)
-                    .addComponent(b2))
-                .addGap(35, 35, 35))
-        );
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 184, 26));
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 114, -1));
 
         bb.setText("→");
         bb.addActionListener(new java.awt.event.ActionListener() {
@@ -93,54 +64,105 @@ int flag = 0 ;
                 bbActionPerformed(evt);
             }
         });
+        getContentPane().add(bb, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 43, -1));
 
-        jButton5.setText("←");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 14, -1, -1));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 14, -1, 30));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("DELETE");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 14, -1, -1));
+
+        s1.setBackground(new java.awt.Color(255, 255, 255));
+        s1.setForeground(new java.awt.Color(102, 204, 255));
+        jPanel2.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, -1));
+
+        s2.setBackground(new java.awt.Color(255, 255, 255));
+        s2.setForeground(new java.awt.Color(102, 204, 255));
+        jPanel2.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 190, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
+
+        studLL.setBackground(new java.awt.Color(0, 153, 255));
+        studLL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                studLLMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(bb, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jLabel3.setText("STUDENT");
+
+        javax.swing.GroupLayout studLLLayout = new javax.swing.GroupLayout(studLL);
+        studLL.setLayout(studLLLayout);
+        studLLLayout.setHorizontalGroup(
+            studLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studLLLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel3)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        studLLLayout.setVerticalGroup(
+            studLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studLLLayout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(jLabel3)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(136, 136, 136))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addComponent(jButton5))
-                .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bb)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
+        getContentPane().add(studLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 30));
+
+        facLL.setBackground(new java.awt.Color(0, 153, 255));
+        facLL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                facLLMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setText("FACULTY");
+
+        javax.swing.GroupLayout facLLLayout = new javax.swing.GroupLayout(facLL);
+        facLL.setLayout(facLLLayout);
+        facLLLayout.setHorizontalGroup(
+            facLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facLLLayout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(68, 68, 68))
         );
+        facLLLayout.setVerticalGroup(
+            facLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, facLLLayout.createSequentialGroup()
+                .addContainerGap(8, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addContainerGap())
+        );
+
+        getContentPane().add(facLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 30));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 0, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,33 +190,51 @@ int flag = 0 ;
         }
     }//GEN-LAST:event_bbActionPerformed
 
-    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
+    private void studLLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studLLMouseClicked
         // TODO add your handling code here:
+        setColor(studLL);
+        resetColor(facLL);
         t1.setVisible(true);
         l1.setVisible(true);
         bb.setVisible(true);
-        l1.setText("Enter Faculty Id");
-        flag = 2 ;
-    }//GEN-LAST:event_b2ActionPerformed
-
-    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        // TODO add your handling code here:
-        t1.setVisible(true);
-        l1.setVisible(true);
-        bb.setVisible(true);
+        s1.setVisible(true);
+        s2.setVisible(false);
         l1.setText("Enter Admn No.");
         flag = 1 ;
-    }//GEN-LAST:event_b1ActionPerformed
+    }//GEN-LAST:event_studLLMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void facLLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facLLMouseClicked
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        resetColor(studLL);
+        setColor(facLL);
+        t1.setVisible(true);
+        l1.setVisible(true);
+        bb.setVisible(true);
+        s1.setVisible(false);
+        s2.setVisible(true);
+        l1.setText("Enter Faculty Id");
+        flag = 2 ;
+    }//GEN-LAST:event_facLLMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         new Home().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
      */
+    void setColor(JPanel panel)
+    {
+        panel.setBackground(new Color(238,238,238));
+    }
+    
+    void resetColor(JPanel panel)
+    {
+        panel.setBackground(new Color(0,153,255));
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -228,14 +268,24 @@ int flag = 0 ;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton b1;
-    private javax.swing.JRadioButton b2;
     private javax.swing.JButton bb;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JPanel facLL;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel l1;
+    private javax.swing.JSeparator s1;
+    private javax.swing.JSeparator s2;
+    private javax.swing.JPanel studLL;
     private javax.swing.JTextField t1;
     // End of variables declaration//GEN-END:variables
 }
