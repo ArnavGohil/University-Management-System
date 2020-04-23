@@ -180,13 +180,30 @@ int flag = 0 ;
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/university", "root", "agat9191");
             Statement stmt = conn.createStatement();
-
-            stmt.executeUpdate(query);
+            String qr = "";
+            if(flag == 1)
+                qr = "SELECT NAME FROM STUDENTS WHERE ADMN_NO = " + str + " ;";
+            else if(flag == 2)
+                qr = "SELECT NAME FROM FACULTY WHERE FAC_ID = " + str + " ;";
+            
+            ResultSet rs = stmt.executeQuery(qr);            
+            rs.next();
+            qr = rs.getString(1).toUpperCase();
+            int rep =  JOptionPane.showConfirmDialog(null, "Are You sure you want to delete " + qr + " ?", "DELETE ?",JOptionPane.YES_NO_OPTION);
+            if(rep == JOptionPane.YES_OPTION)
+            {
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "DELETED!");
+            }
+            
             stmt.close();
             conn.close();
-            JOptionPane.showMessageDialog(null, "DELETED!");
-
+           
         } catch (Exception ex) {
+            if("Illegal operation on empty result set.".equals(ex.getMessage()))
+            {
+                JOptionPane.showMessageDialog(null, "INVALID!");
+            }
             Logger.getLogger(SEARCH.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bbActionPerformed

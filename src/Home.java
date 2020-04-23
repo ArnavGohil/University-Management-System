@@ -41,7 +41,7 @@ public class Home extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/search.png")); // NOI18N
-        jButton1.setToolTipText("SEARCH");
+        jButton1.setToolTipText("SEARCH DATA");
         jButton1.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +52,7 @@ public class Home extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/add.png")); // NOI18N
-        jButton2.setToolTipText("ADD");
+        jButton2.setToolTipText("ADD DATA");
         jButton2.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class Home extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/update.png")); // NOI18N
-        jButton3.setToolTipText("UPDATE");
+        jButton3.setToolTipText("UPDATE DATA");
         jButton3.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +74,7 @@ public class Home extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/delete.png")); // NOI18N
-        jButton4.setToolTipText("DELETE");
+        jButton4.setToolTipText("DELETE DATA");
         jButton4.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
