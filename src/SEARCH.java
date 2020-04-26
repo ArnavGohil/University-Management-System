@@ -26,6 +26,7 @@ public class SEARCH extends javax.swing.JFrame {
         t1.setVisible(false);
         l1.setVisible(false);
         b1.setVisible(false);
+        b2.setVisible(false);
     }
     int flag = Integer.MAX_VALUE;
     /**
@@ -38,6 +39,7 @@ public class SEARCH extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        b2 = new javax.swing.JButton();
         t1 = new javax.swing.JTextField();
         l1 = new javax.swing.JLabel();
         b1 = new javax.swing.JButton();
@@ -53,9 +55,18 @@ public class SEARCH extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         faBut = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        b2.setText("CLEAR");
+        b2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 70, 30));
         getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 200, 40));
 
         l1.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -224,12 +235,26 @@ public class SEARCH extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 460));
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 780, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 780, 10));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
      String str = "0" ;
      DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+     b2.setVisible(true);
      String query = "";
             if(flag == Integer.MAX_VALUE)
             {
@@ -386,6 +411,16 @@ public class SEARCH extends javax.swing.JFrame {
         new Home().setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
+        // TODO add your handling code here:
+        t1.setText("");
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int rows = model.getRowCount();
+        for(int i = 0 ;  i < rows ; i++)
+            model.removeRow(0);
+        
+    }//GEN-LAST:event_b2ActionPerformed
+
     void setColor(JPanel panel)
     {
         panel.setBackground(new Color(238,238,238));
@@ -433,6 +468,7 @@ public class SEARCH extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b1;
+    private javax.swing.JButton b2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel faBut;
     private javax.swing.JLabel jLabel1;
@@ -440,6 +476,7 @@ public class SEARCH extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
