@@ -335,7 +335,7 @@ public class ADD extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dtumini.png"))); // NOI18N
         jLabel18.setToolTipText("Home");
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

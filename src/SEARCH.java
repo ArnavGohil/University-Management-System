@@ -106,7 +106,7 @@ public class SEARCH extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SEARCH");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dtumini.png"))); // NOI18N
         jLabel2.setToolTipText("Home");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,7 +124,7 @@ public class SEARCH extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/student.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/student.png"))); // NOI18N
         jLabel3.setText("    STUDENT");
 
         javax.swing.GroupLayout stButLayout = new javax.swing.GroupLayout(stBut);
@@ -151,7 +151,7 @@ public class SEARCH extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/marks.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/marks.png"))); // NOI18N
         jLabel5.setText("    MARKS");
 
         javax.swing.GroupLayout maButLayout = new javax.swing.GroupLayout(maBut);
@@ -178,7 +178,7 @@ public class SEARCH extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/teacher.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teacher.png"))); // NOI18N
         jLabel4.setText("    FACULTY");
 
         javax.swing.GroupLayout faButLayout = new javax.swing.GroupLayout(faBut);

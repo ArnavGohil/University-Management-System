@@ -69,7 +69,7 @@ int flag = 0 ;
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/dtumini.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dtumini.png"))); // NOI18N
         jLabel1.setToolTipText("Home");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

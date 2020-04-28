@@ -151,7 +151,7 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/arnavgohil/Downloads/DTU,_Delhi_official_logo.png"/>
+              <Image iconType="3" name="/images/DTU,_Delhi_official_logo.png"/>
             </Property>
           </Properties>
         </Component>

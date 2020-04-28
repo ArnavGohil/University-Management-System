@@ -73,7 +73,7 @@ public class Splash extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("UNIVERSITY MANAGEMENT SYSTEM");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Downloads/DTU,_Delhi_official_logo.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DTU,_Delhi_official_logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -40,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/search.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         jButton1.setToolTipText("SEARCH DATA");
         jButton1.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +51,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 130, 120));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/add.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         jButton2.setToolTipText("ADD DATA");
         jButton2.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +62,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 130, 120));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/update.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/update.png"))); // NOI18N
         jButton3.setToolTipText("UPDATE DATA");
         jButton3.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +73,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 130, 120));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/delete.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
         jButton4.setToolTipText("DELETE DATA");
         jButton4.setPreferredSize(new java.awt.Dimension(115, 30));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("UNIVERSITY MANAGEMENT SYSTEM");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/arnavgohil/Desktop/dtu.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dtu.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
